@@ -10,5 +10,5 @@ class UpsampleBlock(tf.keras.layers.Layer):
             tf.keras.layers.Conv2DTranspose(self.num_filters, self.kernel_size, activation="relu", padding="same", strides=2)
         ])
 
-    def call(self, inputs):
+    def call(self, inputs):  
         return self.layers(inputs)
