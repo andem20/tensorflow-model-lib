@@ -18,22 +18,3 @@ class UNet(tf.keras.Model):
         x = self.bottom_layer(x)
         x = self.decoder(x, skips[::-1])
         return self.outputs(x)
-
-
-# def UNet(num_classes, input_shape, stack=[32, 64, 128, 256, 512]):   
-#     inputs = tf.keras.Input(shape=input_shape)
-#     x = inputs
-
-#     encoder = models.ConvEncoder(stack=stack[:-1])
-#     decoder = models.UpsampleDecoder(stack[:-1][::-1])
-#     x, skips = encoder(x)
-
-#     x = layers.ConvBlock(stack[-1])(x)
-
-#     x = decoder(x, skips[::-1])
-        
-#     outputs = tf.keras.layers.Conv2D(num_classes, 3, padding="same", activation="softmax")(x)
-
-#     model = tf.keras.Model(inputs, outputs)
-    
-#     return model
