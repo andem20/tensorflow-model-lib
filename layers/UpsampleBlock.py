@@ -1,6 +1,9 @@
 import tensorflow as tf
 
 class UpsampleBlock(tf.keras.layers.Layer):
+    """
+    Upsample block creating two Conv2dTranspose layers.
+    """
     def __init__(self, num_filters: int, kernel_size = 3):
         super(UpsampleBlock, self).__init__()
         self.num_filters = num_filters

@@ -1,6 +1,9 @@
 import tensorflow as tf
 
 class ConvBlock(tf.keras.layers.Layer):
+    """
+    Convolutional block creating two Conv2D layers with batch normalization.
+    """
     def __init__(self, num_filters: int, kernel_size = 3):
         super(ConvBlock, self).__init__()
         self.num_filters = num_filters
